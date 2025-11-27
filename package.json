@@ -1,0 +1,26 @@
+{
+  "name": "portfolio_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": "22.17.1",
+    "npm":"10.9.2"
+  },
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^9.0.0",
+    "nodemon": "^3.1.11"
+  }
+}
